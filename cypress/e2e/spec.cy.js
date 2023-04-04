@@ -1,3 +1,5 @@
+import "cypress-real-events/support";
+
 describe("home page", function () {
   it("Login-page", () => {
     cy.visit("https://demo.applitools.com/")
@@ -28,6 +30,10 @@ describe("home page", function () {
       } else {
         cy.log("No")
       }
+      cy.get('div.balance > div.balance-link' ).should('have.length', 3)
     })
   })
 })
+
+
+// ค้าง mouse over, page holder //
